@@ -2,4 +2,4 @@
 App for translation between Nivhk, Russian and English.
 ***
 ## Contributors
-[Genrikhs Aleksandr](http://ehttps://github.com/GenrikhsAlexandr/dictionary)
+[Genrikhs Aleksandr](http://github.com/GenrikhsAlexandr)
