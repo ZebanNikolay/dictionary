@@ -7,6 +7,8 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="windowSplashScreenBackground">#673AB7</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
     </style>
 
     <style name="Theme.Dictionary" parent="Base.Theme.Dictionary" />
