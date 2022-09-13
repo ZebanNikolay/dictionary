@@ -20,6 +20,27 @@
             app:title="@string/app_name"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:hint="@string/search_hint"
+            app:boxBackgroundColor="?colorSurface"
+            app:boxBackgroundMode="filled"
+            app:endIconMode="clear_text"
+            app:endIconTint="?colorPrimary"
+            app:startIconDrawable="@drawable/ic_search_24"
+            app:startIconTint="?colorPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchBar"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
