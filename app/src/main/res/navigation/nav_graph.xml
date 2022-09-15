@@ -11,4 +11,15 @@
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
     </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ncbs.dictionary.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.ncbs.dictionary.FavoriteFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_favorite" />
+
 </navigation>
