@@ -8,5 +8,7 @@
     <string name="language">Язык</string>
     <string name="about">О приложении</string>
     <string name="search_hint">Поиск</string>
+    <string name="favorites">Избранное</string>
+    <string name="home">Главная</string>
 
 </resources>
