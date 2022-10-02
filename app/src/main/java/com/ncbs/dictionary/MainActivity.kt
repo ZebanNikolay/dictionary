@@ -16,6 +16,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            return@setOnMenuItemClickListener when (item.itemId) {
+                R.id.application -> {
+                    println("Нажат элемент about")
+                    true
+                }
+                R.id.word -> {
+                    println("Нажат элемент word")
+                    true
+                }
+                R.id.language -> {
+                    println("Нажат элемент language")
+                    true
+                }
+                else -> false
+            }
+        }
+
         setContentView(binding.root)
     }
 }
