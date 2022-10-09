@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.fragment.app.Fragment
 import com.ncbs.dictionary.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +34,27 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
         setContentView(binding.root)
+        replaceFragment(HomeFragment())
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> replaceFragment(HomeFragment()
+                    )
+                    R.id.favorite -> replaceFragment(FavoriteFragment()
+                    )
+
+                else -> {
+
+                }
+            }
+            true
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.nav_host_fragment_content_main, fragment)
+        fragmentTransaction.commit()
     }
 }
