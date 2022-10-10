@@ -1,5 +1,6 @@
 package com.ncbs.dictionary
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -16,10 +17,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         binding.toolbar.setOnMenuItemClickListener { item ->
             return@setOnMenuItemClickListener when (item.itemId) {
                 R.id.application -> {
-                    println("Нажат элемент about")
+                   val intent = Intent(this, AboutActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.word -> {
