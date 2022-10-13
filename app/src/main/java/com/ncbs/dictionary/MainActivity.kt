@@ -38,10 +38,8 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(HomeFragment())
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> replaceFragment(HomeFragment()
-                    )
-                    R.id.favorite -> replaceFragment(FavoriteFragment()
-                    )
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.favorite -> replaceFragment(FavoriteFragment())
 
                 else -> {
 
