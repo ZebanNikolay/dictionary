@@ -43,10 +43,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.favorite -> replaceFragment(FavoriteFragment())
-
-                else -> {
-
-                }
+                else -> Unit
             }
             true
         }
@@ -55,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.nav_host_fragment_content_main, fragment)
+        fragmentTransaction.replace(R.id.navHostFragmentContentMain, fragment)
         fragmentTransaction.commit()
     }
 }
