@@ -2,6 +2,9 @@
     <string name="app_name">Словарь</string>
     <string name="word">Обновить базу слов</string>
     <string name="language">Язык</string>
+    <string name="ru_language">Русский</string>
+    <string name="nv_language">Нивхский</string>
+    <string name="en_language">Английский</string>
     <string name="about">О приложении</string>
     <string name="search_hint">Поиск</string>
     <string name="favorites">Избранное</string>
@@ -14,4 +17,4 @@
 \t\tВ работе использован материал нивхско-русского словаря:\n\n
 \t\tСанги В. М., Гашилова Л. Б. Словарь нивхско-русский (сахалинский диалект) : около 2000 слов : учебное пособие для общеобразовательных учреждений / В. М. Санги, Л. Б. Гашилова . - Санкт-Петербург : Просвещение, 2003. - 107, [2] с. - (Языки народов Севера, Сибири и Дальнего Востока).
 </string>
-</resources>
+   </resources>

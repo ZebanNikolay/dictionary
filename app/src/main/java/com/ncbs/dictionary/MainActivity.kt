@@ -2,11 +2,16 @@ package com.ncbs.dictionary
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.MenuRes
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import com.ncbs.dictionary.databinding.ActivityMainBinding
+import org.intellij.lang.annotations.Language
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +36,10 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.language -> {
-                    println("Нажат элемент language")
+                    showMenu(
+                        binding.toolbar.findViewById(R.id.language),
+                        R.menu.popup_menu
+                    )
                     true
                 }
                 else -> false
@@ -47,6 +55,27 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    private fun showMenu(v: View, @MenuRes menuRes: Int) {
+        val popup = PopupMenu(context!!, v)
+        popup.menuInflater.inflate(menuRes, popup.menu)
+
+        popup.setOnMenuItemClickListener { menuItem: MenuItem ->
+            return@setOnMenuItemClickListener when (menuItem.itemId) {
+                R.id.ru_language -> {
+                    Language.ru
+                }
+                R.id.nv_language -> {
+                    Language.nv
+                }
+                R.id.en_language -> {
+                    Language.en
+                }
+                else -> false
+            }
+                   }
+        popup.show()
     }
 
     private fun replaceFragment(fragment: Fragment) {
