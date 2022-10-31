@@ -10,8 +10,8 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.ncbs.dictionary.databinding.ActivityMainBinding
-import org.intellij.lang.annotations.Language
 
 class MainActivity : AppCompatActivity() {
 
@@ -82,9 +82,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.navHostFragmentContentMain, fragment)
-        fragmentTransaction.commit()
+        supportFragmentManager
+        supportFragmentManager.commit {
+            replace(R.id.navHostFragmentContentMain, fragment)
+        }
     }
 }
