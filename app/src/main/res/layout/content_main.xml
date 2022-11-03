@@ -2,7 +2,5 @@
 <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navHostFragmentContentMain"
-    android:name="androidx.navigation.fragment.NavHostFragment"
     android:layout_width="0dp"
-    android:layout_height="0dp"
-    />
+    android:layout_height="0dp"  />
