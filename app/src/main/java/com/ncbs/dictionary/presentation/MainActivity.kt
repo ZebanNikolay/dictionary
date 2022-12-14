@@ -1,4 +1,4 @@
-package com.ncbs.dictionary
+package com.ncbs.dictionary.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.ncbs.dictionary.R
 import com.ncbs.dictionary.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package moduls
+package com.ncbs.dictionary.domain
 
 import java.util.*
 

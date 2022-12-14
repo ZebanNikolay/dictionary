@@ -1,7 +1,7 @@
-package com.ncbs.dictionary
+package com.ncbs.dictionary.domain
 
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class FavoriteViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }
