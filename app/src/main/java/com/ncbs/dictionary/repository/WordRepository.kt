@@ -23,7 +23,7 @@ class WordRepository {
         }
     }
 
-    private fun maptoWord(wordDto: WordDto): Word {
+    fun maptoWord(wordDto: WordDto): Word {
         return Word(
             id = wordDto.id ?: "no id",
             locales = mapOf(

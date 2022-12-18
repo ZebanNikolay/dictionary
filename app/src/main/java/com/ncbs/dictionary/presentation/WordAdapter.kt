@@ -11,20 +11,12 @@ import java.util.*
 
 class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
-    private val currentLocale = Locale("ru")
+    private lateinit var list: List<WordListItem>
 
-    private lateinit var list: List<Word>
-
-    fun submitData(list:List<Word>){
+    fun submitData(list:List<WordListItem>){
         this.list = list
         notifyDataSetChanged()
     }
-
-   /* init {
-        runBlocking{
-            list = WordRepository().getWords()
-        }
-    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         return WordViewHolder(
@@ -46,8 +38,8 @@ class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     inner class WordViewHolder(private val binding: ListItemWordBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(word: Word) {
-            binding.listItemWord.text = word.locales[currentLocale.language]?.value
+        fun bind(word: WordListItem) {
+            binding.listItemWord.text = word.title
         }
     }
 }

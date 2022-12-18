@@ -8,7 +8,7 @@
         android:id="@+id/listItemWord"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         tools:itemCount="7"
         tools:listitem="@layout/list_item_word" />
 
