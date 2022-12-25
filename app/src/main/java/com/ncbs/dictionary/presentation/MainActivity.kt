@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setOnMenuItemClickListener { item ->
             return@setOnMenuItemClickListener when (item.itemId) {
                 R.id.application -> {
-                   val intent = Intent(this, AboutActivity::class.java)
+                    val intent = Intent(this, AboutActivity::class.java)
                     startActivity(intent)
                     true
                 }
@@ -65,8 +65,8 @@ class MainActivity : AppCompatActivity() {
         popup.setOnMenuItemClickListener { menuItem: MenuItem ->
             return@setOnMenuItemClickListener when (menuItem.itemId) {
                 R.id.ru_language -> {
-                   println("Russian")
-                true //Language.ru
+                    println("Russian")
+                    true //Language.ru
                 }
                 R.id.nv_language -> {
                     println("Nivkhskii")
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> false
             }
-                   }
+        }
         popup.show()
     }
 

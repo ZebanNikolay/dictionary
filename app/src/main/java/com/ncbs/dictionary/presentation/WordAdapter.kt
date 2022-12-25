@@ -13,7 +13,7 @@ class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     private lateinit var list: List<WordListItem>
 
-    fun submitData(list:List<WordListItem>){
+    fun submitData(list: List<WordListItem>) {
         this.list = list
         notifyDataSetChanged()
     }

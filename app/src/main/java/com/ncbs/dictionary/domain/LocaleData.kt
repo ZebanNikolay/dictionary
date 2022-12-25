@@ -2,7 +2,7 @@ package com.ncbs.dictionary.domain
 
 import java.util.*
 
-data class LocaleData (
+data class LocaleData(
     val locale: Locale,
-    val value: String
+    val value: String,
 )
