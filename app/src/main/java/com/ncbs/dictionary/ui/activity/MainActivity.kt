@@ -1,16 +1,17 @@
-package com.ncbs.dictionary.presentation
+package com.ncbs.dictionary.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.annotation.MenuRes
 import android.view.MenuItem
 import android.view.View
+import androidx.annotation.MenuRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncbs.dictionary.R
 import com.ncbs.dictionary.databinding.ActivityMainBinding
 
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        binding.toolbar.setOnMenuItemClickListener { item ->
+       binding.toolbar.setOnMenuItemClickListener { item ->
             return@setOnMenuItemClickListener when (item.itemId) {
                 R.id.application -> {
                     val intent = Intent(this, AboutActivity::class.java)
@@ -46,17 +47,25 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
         setContentView(binding.root)
-        replaceFragment(HomeFragment())
-        binding.bottomNavigation.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> replaceFragment(HomeFragment())
-                R.id.favorite -> replaceFragment(FavoriteFragment())
-                else -> Unit
-            }
-            true
+       /* replaceFragment(HomeFragment())*/
+
+       val navView: BottomNavigationView = binding.bottomNavigation
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main)
+        NavigationUI.setupWithNavController(navView, navController)
+
+
+
+    /*binding.bottomNavigation.setOnItemSelectedListener {
+        when (it.itemId) {
+            R.id.home -> replaceFragment(HomeFragment())
+            R.id.favorite -> replaceFragment(FavoriteFragment())
+            else -> Unit
         }
-    }
+        true
+    }*/
+}
 
     private fun showMenu(v: View, @MenuRes menuRes: Int) {
         val popup = PopupMenu(this, v)
@@ -82,10 +91,10 @@ class MainActivity : AppCompatActivity() {
         popup.show()
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+   /* private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
         supportFragmentManager.commit {
-            replace(R.id.navHostFragmentContentMain, fragment)
+            replace(R.id.nav_host_fragment_activity_main, fragment)
         }
-    }
+    }*/
 }

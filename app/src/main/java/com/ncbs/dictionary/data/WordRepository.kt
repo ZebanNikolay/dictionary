@@ -1,4 +1,4 @@
-package com.ncbs.dictionary.repository
+package com.ncbs.dictionary.data
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.ncbs.dictionary.domain.LocaleData
@@ -32,7 +32,8 @@ class WordRepository {
                 put("nv", LocaleData(
                     locale = Locale("nv"),
                     value = wordDto.nv ?: return null
-                ))
+                )
+                )
                 wordDto.ru?.let {
                     "ru" to LocaleData(
                         locale = Locale("ru"),

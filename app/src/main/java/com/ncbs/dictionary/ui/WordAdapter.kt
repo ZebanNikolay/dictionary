@@ -1,13 +1,10 @@
-package com.ncbs.dictionary.presentation
+package com.ncbs.dictionary.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ncbs.dictionary.repository.WordRepository
 import com.ncbs.dictionary.databinding.ListItemWordBinding
-import com.ncbs.dictionary.domain.Word
-import kotlinx.coroutines.runBlocking
-import java.util.*
+import com.ncbs.dictionary.domain.WordListItem
 
 class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 

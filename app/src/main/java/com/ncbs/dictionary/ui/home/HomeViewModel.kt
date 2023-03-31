@@ -1,11 +1,10 @@
-package com.ncbs.dictionary.domain
+package com.ncbs.dictionary.ui.home
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.ncbs.dictionary.presentation.WordListItem
-import com.ncbs.dictionary.repository.WordDto
-import com.ncbs.dictionary.repository.WordRepository
+import com.ncbs.dictionary.data.WordRepository
+import com.ncbs.dictionary.domain.Word
+import com.ncbs.dictionary.domain.WordListItem
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.util.*

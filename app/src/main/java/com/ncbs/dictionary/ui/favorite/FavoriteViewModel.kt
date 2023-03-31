@@ -1,4 +1,4 @@
-package com.ncbs.dictionary.domain
+package com.ncbs.dictionary.ui.favorite
 
 import androidx.lifecycle.ViewModel
 
