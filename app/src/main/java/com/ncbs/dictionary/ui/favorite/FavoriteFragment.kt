@@ -1,21 +1,18 @@
 package com.ncbs.dictionary.ui.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.ncbs.dictionary.databinding.FragmentFavoriteBinding
 import com.ncbs.dictionary.ui.WordAdapter
+import com.ncbs.dictionary.ui.home.HomeViewModel
 
 class FavoriteFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = FavoriteFragment()
-    }
-
-    private val viewModel: FavoriteViewModel by viewModels()
+    private val viewModel: HomeViewModel by activityViewModels()
     private var _binding: FragmentFavoriteBinding? = null
     private val binding: FragmentFavoriteBinding get() = _binding!!
     private val adapter: WordAdapter = WordAdapter()
@@ -25,7 +22,6 @@ class FavoriteFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 

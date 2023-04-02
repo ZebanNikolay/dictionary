@@ -11,6 +11,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncbs.dictionary.R
 import com.ncbs.dictionary.databinding.ActivityMainBinding
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-       binding.toolbar.setOnMenuItemClickListener { item ->
+        binding.toolbar.setOnMenuItemClickListener { item ->
             return@setOnMenuItemClickListener when (item.itemId) {
                 R.id.application -> {
                     val intent = Intent(this, AboutActivity::class.java)
@@ -47,25 +48,15 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
         setContentView(binding.root)
-       /* replaceFragment(HomeFragment())*/
 
-       val navView: BottomNavigationView = binding.bottomNavigation
-        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main)
-        NavigationUI.setupWithNavController(navView, navController)
-
-
-
-    /*binding.bottomNavigation.setOnItemSelectedListener {
-        when (it.itemId) {
-            R.id.home -> replaceFragment(HomeFragment())
-            R.id.favorite -> replaceFragment(FavoriteFragment())
-            else -> Unit
-        }
-        true
-    }*/
-}
+        binding.bottomNavigation.setupWithNavController(
+            Navigation.findNavController(
+                this,
+                R.id.nav_host_fragment_activity_main
+            )
+        )
+    }
 
     private fun showMenu(v: View, @MenuRes menuRes: Int) {
         val popup = PopupMenu(this, v)
@@ -90,11 +81,4 @@ class MainActivity : AppCompatActivity() {
         }
         popup.show()
     }
-
-   /* private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager
-        supportFragmentManager.commit {
-            replace(R.id.nav_host_fragment_activity_main, fragment)
-        }
-    }*/
 }

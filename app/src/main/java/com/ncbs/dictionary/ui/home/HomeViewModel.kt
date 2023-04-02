@@ -18,21 +18,17 @@ class HomeViewModel : ViewModel() {
             WordListItem(
                 word = word,
                 title = word.locales[currentLocale.value.language]?.value ?: return@mapNotNull null
-            )
+                      )
         }
     }.stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
     private val repository = WordRepository()
 
-    private val currentLocale: MutableStateFlow<Locale> = MutableStateFlow(Locale("ru"))
+    private val currentLocale: MutableStateFlow<Locale> = MutableStateFlow(Locale("nv"))
 
     init {
-
         viewModelScope.launch {
             _words.value = repository.getWords()
-
         }
     }
-
-
 }
