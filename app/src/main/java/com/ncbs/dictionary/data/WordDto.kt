@@ -1,4 +1,4 @@
-package com.ncbs.dictionary.repository
+package com.ncbs.dictionary.data
 
 import kotlinx.serialization.Serializable
 

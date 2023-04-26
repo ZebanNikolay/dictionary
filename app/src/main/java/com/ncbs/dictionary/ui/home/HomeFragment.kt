@@ -1,4 +1,4 @@
-package com.ncbs.dictionary.presentation
+package com.ncbs.dictionary.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,17 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ncbs.dictionary.domain.HomeViewModel
 import com.ncbs.dictionary.databinding.FragmentHomeBinding
-import com.ncbs.dictionary.domain.Word
-import kotlinx.coroutines.flow.collect
+import com.ncbs.dictionary.ui.WordAdapter
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
 
     private val viewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
@@ -29,7 +23,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.listItemWord.adapter = adapter
@@ -42,7 +36,7 @@ class HomeFragment : Fragment() {
                 adapter.submitData(words)
             }
         }
-        return binding!!.root
+        return binding.root
     }
 
     override fun onDestroy() {
