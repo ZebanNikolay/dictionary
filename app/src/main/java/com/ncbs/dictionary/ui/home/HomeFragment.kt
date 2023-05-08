@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ncbs.dictionary.databinding.FragmentHomeBinding
 import com.ncbs.dictionary.ui.WordAdapter
+import com.ncbs.dictionary.ui.WordDetailsBottomSheet
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -19,6 +20,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding get() = _binding!!
     private val adapter: WordAdapter = WordAdapter()
+
+    private var wordDetailsBottomSheet:WordDetailsBottomSheet? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
