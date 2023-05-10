@@ -8,10 +8,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ncbs.dictionary.databinding.WordDetailsBottomsheetBinding
 
 class WordDetailsBottomSheet : BottomSheetDialogFragment() {
+
     private var _binding: WordDetailsBottomsheetBinding? = null
     private val binding: WordDetailsBottomsheetBinding get() = _binding!!
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         _binding = WordDetailsBottomsheetBinding.inflate(inflater, container, false)
@@ -23,5 +26,3 @@ class WordDetailsBottomSheet : BottomSheetDialogFragment() {
         _binding = null
     }
 }
-
-

@@ -18,7 +18,8 @@ class FavoriteFragment : Fragment() {
     private val adapter: WordAdapter = WordAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
