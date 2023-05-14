@@ -18,7 +18,7 @@ class HomeViewModel : ViewModel() {
             WordListItem(
                 word = word,
                 title = word.locales[currentLocale.value.language]?.value ?: return@mapNotNull null
-                      )
+            )
         }
     }.stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
