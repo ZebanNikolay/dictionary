@@ -15,7 +15,6 @@ class FavoriteFragment : Fragment() {
     private val viewModel: HomeViewModel by activityViewModels()
     private var _binding: FragmentFavoriteBinding? = null
     private val binding: FragmentFavoriteBinding get() = _binding!!
-    private val adapter: WordAdapter = WordAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,

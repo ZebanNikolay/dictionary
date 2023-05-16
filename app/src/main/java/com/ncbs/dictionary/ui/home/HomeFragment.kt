@@ -19,8 +19,13 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding get() = _binding!!
-    private val adapter: WordAdapter = WordAdapter()
-    private var wordDetailsBottomSheet:WordDetailsBottomSheet? = null
+    private val adapter: WordAdapter = WordAdapter(
+        onWordClick = { word ->
+            wordDetailsBottomSheet = WordDetailsBottomSheet.newInstance(word)
+            wordDetailsBottomSheet?.show(parentFragmentManager, "WordDetailsBottomSheet")
+        }
+    )
+    private var wordDetailsBottomSheet: WordDetailsBottomSheet? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +33,11 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.listItemWord.adapter = adapter
         binding.listItemWord.layoutManager = LinearLayoutManager(requireContext())
@@ -39,7 +49,6 @@ class HomeFragment : Fragment() {
                 adapter.submitData(words)
             }
         }
-        return binding.root
     }
 
     override fun onDestroy() {

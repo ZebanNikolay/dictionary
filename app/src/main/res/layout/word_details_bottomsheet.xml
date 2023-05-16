@@ -7,7 +7,6 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nvWord"
-        style="@style/MaterialAlertDialog.Material3.Title.Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -49,7 +48,6 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/ruWord"
-        style="@style/MaterialAlertDialog.Material3.Body.Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -69,7 +67,6 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/enWord"
-        style="@style/MaterialAlertDialog.Material3.Body.Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
