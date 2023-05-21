@@ -4,18 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ncbs.dictionary.databinding.WordDetailsBottomsheetBinding
 import com.ncbs.dictionary.domain.Word
+import kotlinx.coroutines.launch
+import org.intellij.lang.annotations.Language
 
 class WordDetailsBottomSheet(
     private val word: Word
 ) : BottomSheetDialogFragment() {
 
-    companion object{
-        fun newInstance (word: Word):WordDetailsBottomSheet{
-            return WordDetailsBottomSheet(word)
-        }
+    companion object {
+        const val TAG = "WordDetailsBottomSheet"
     }
 
     private var _binding: WordDetailsBottomsheetBinding? = null
@@ -26,7 +27,17 @@ class WordDetailsBottomSheet(
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = WordDetailsBottomsheetBinding.inflate(inflater, container, false)
+        _binding = WordDetailsBottomsheetBinding.inflate(
+            inflater,
+            container,
+            false
+        ).apply {
+            lifecycleScope.launch {
+                nvWord.text = "Nivh word"
+                ruWord.text = "Russian word"
+                enWord.text = "English word"
+            }
+        }
         return binding.root
     }
 

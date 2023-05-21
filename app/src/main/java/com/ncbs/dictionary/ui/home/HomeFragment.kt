@@ -21,11 +21,13 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding get() = _binding!!
     private val adapter: WordAdapter = WordAdapter(
         onWordClick = { word ->
-            wordDetailsBottomSheet = WordDetailsBottomSheet.newInstance(word)
-            wordDetailsBottomSheet?.show(parentFragmentManager, "WordDetailsBottomSheet")
+            val wordDetailsBottomSheet = WordDetailsBottomSheet(word)
+            wordDetailsBottomSheet.show(
+                parentFragmentManager,
+                WordDetailsBottomSheet.TAG
+            )
         }
     )
-    private var wordDetailsBottomSheet: WordDetailsBottomSheet? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
