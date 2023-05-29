@@ -4,19 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ncbs.dictionary.databinding.WordDetailsBottomsheetBinding
 import com.ncbs.dictionary.domain.Word
-import kotlinx.coroutines.launch
-import org.intellij.lang.annotations.Language
 
 class WordDetailsBottomSheet(
     private val word: Word
 ) : BottomSheetDialogFragment() {
 
     companion object {
-        const val TAG = "WordDetailsBottomSheet"
+        private const val TAG = "WordDetailsBottomSheet"
+
+        fun show(word: Word, fragment: FragmentManager) {
+            val wordDetailsBottomSheet = WordDetailsBottomSheet(word)
+            wordDetailsBottomSheet.show(
+                fragment,
+                TAG
+            )
+        }
     }
 
     private var _binding: WordDetailsBottomsheetBinding? = null
@@ -32,11 +38,9 @@ class WordDetailsBottomSheet(
             container,
             false
         ).apply {
-            lifecycleScope.launch {
-                nvWord.text = "Nivh word"
-                ruWord.text = "Russian word"
-                enWord.text = "English word"
-            }
+            nvWord.text = word.locales["nv"]?.value ?: "Nnivh word"
+            enWord.text = word.locales["en"]?.value ?: "English word"
+            ruWord.text = word.locales["ru"]?.value ?: "Russian word"
         }
         return binding.root
     }

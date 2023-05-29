@@ -62,7 +62,7 @@ class WordRepository {
                     )
                 }
                 wordDto.en?.let {
-                    "ru" to LocaleData(
+                    "en" to LocaleData(
                         locale = Locale("en"),
                         value = it
                     )

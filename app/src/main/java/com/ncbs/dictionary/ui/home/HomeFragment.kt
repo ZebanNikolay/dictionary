@@ -21,10 +21,8 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding get() = _binding!!
     private val adapter: WordAdapter = WordAdapter(
         onWordClick = { word ->
-            val wordDetailsBottomSheet = WordDetailsBottomSheet(word)
-            wordDetailsBottomSheet.show(
-                parentFragmentManager,
-                WordDetailsBottomSheet.TAG
+            WordDetailsBottomSheet.show(
+                word, fragment = childFragmentManager
             )
         }
     )
