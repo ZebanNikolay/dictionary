@@ -49,21 +49,26 @@ class WordRepository {
         return Word(
             id = wordDto.id ?: return null,
             locales = buildMap {
-                put("nv", LocaleData(
-                    locale = Locale("nv"),
-                    value = wordDto.nv ?: return null
+                put(
+                    "nv", LocaleData(
+                        locale = Locale("nv"),
+                        value = wordDto.nv ?: return null
+                    )
                 )
-                )
-                wordDto.ru?.let {
-                    "ru" to LocaleData(
+                 wordDto.ru?.let {
+                   put(
+                    "ru", LocaleData(
                         locale = Locale("ru"),
                         value = it
+                       )
                     )
                 }
                 wordDto.en?.let {
-                    "ru" to LocaleData(
-                        locale = Locale("en"),
+                    put(
+                    "en", LocaleData(
+                        locale = Locale.ENGLISH,
                         value = it
+                    )
                     )
                 }
             }

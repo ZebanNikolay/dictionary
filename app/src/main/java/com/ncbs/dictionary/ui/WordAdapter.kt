@@ -4,9 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ncbs.dictionary.databinding.ListItemWordBinding
+import com.ncbs.dictionary.domain.Word
 import com.ncbs.dictionary.domain.WordListItem
 
-class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
+class WordAdapter(
+    val onWordClick:(Word) ->Unit
+) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     private lateinit var list: List<WordListItem>
 
@@ -35,8 +38,11 @@ class WordAdapter : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     inner class WordViewHolder(private val binding: ListItemWordBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(word: WordListItem) {
-            binding.listItemWord.text = word.title
+        fun bind(listItem: WordListItem) {
+            binding.listItemWord.text = listItem.title
+            binding.listItemWord.setOnClickListener{
+                onWordClick(listItem.word)
+            }
         }
     }
 }
