@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     private val adapter: WordAdapter = WordAdapter(
         onWordClick = { word ->
             WordDetailsBottomSheet.show(
-                word, fragment = childFragmentManager
+                word, fragmentManager = childFragmentManager
             )
         }
     )

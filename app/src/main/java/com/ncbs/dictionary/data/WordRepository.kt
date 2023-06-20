@@ -55,16 +55,20 @@ class WordRepository {
                         value = wordDto.nv ?: return null
                     )
                 )
-                wordDto.ru?.let {
-                    "ru" to LocaleData(
+                 wordDto.ru?.let {
+                   put(
+                    "ru", LocaleData(
                         locale = Locale("ru"),
                         value = it
+                       )
                     )
                 }
                 wordDto.en?.let {
-                    "en" to LocaleData(
-                        locale = Locale("en"),
+                    put(
+                    "en", LocaleData(
+                        locale = Locale.ENGLISH,
                         value = it
+                    )
                     )
                 }
             }

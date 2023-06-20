@@ -16,10 +16,10 @@ class WordDetailsBottomSheet(
     companion object {
         private const val TAG = "WordDetailsBottomSheet"
 
-        fun show(word: Word, fragment: FragmentManager) {
+        fun show(word: Word, fragmentManager: FragmentManager) {
             val wordDetailsBottomSheet = WordDetailsBottomSheet(word)
             wordDetailsBottomSheet.show(
-                fragment,
+                fragmentManager,
                 TAG
             )
         }
@@ -38,6 +38,7 @@ class WordDetailsBottomSheet(
             container,
             false
         ).apply {
+
             nvWord.text = word.locales["nv"]?.value ?: "Nnivh word"
             enWord.text = word.locales["en"]?.value ?: "English word"
             ruWord.text = word.locales["ru"]?.value ?: "Russian word"
